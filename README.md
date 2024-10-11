@@ -1,5 +1,3 @@
-# Algorithms
-
 ## Overview
 This repository contains detailed documentation of the problems I solved throughout my journey of studying algorithms, one of the core principles of computer science. I am sharing my solutions to contribute to the learning community and provide insights into different algorithmic approaches.
 
