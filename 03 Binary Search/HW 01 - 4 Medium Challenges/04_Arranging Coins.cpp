@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/arranging-coins/description/
+
 #include <iostream>
 using namespace std;
 
