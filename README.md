@@ -1,5 +1,5 @@
 ## Overview
-This repository contains detailed documentation of the problems I solved throughout my journey of studying algorithms, one of the core principles of computer science. I am sharing my solutions to contribute to the learning community and provide insights into different algorithmic approaches.
+In this repo, I'm tracking my progress on my journey to learn and master algorithms, and I'm also sharing my solutions with others
 
 ## Resources
 There are two approaches to studying algorithms: the academic and the practical. During my journey, I aimed to combine both. Below are two courses that were invaluable to me:
