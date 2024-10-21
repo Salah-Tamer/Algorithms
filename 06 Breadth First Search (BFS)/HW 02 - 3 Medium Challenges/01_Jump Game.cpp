@@ -10,56 +10,40 @@ class Solution {
         return to >= 0 && to < length; 
     }
 
-    void directed_edge(vector<vector<int>> &graph, int from, int to) {
-        if (isValid(graph.size(), to)) { 
-            graph[from].push_back(to);
+public:
+    bool canReach(vector<int>& arr, int start) {
+        if(arr[start] == 0){
+            return true;
         }
-    }
 
-    bool bfs(vector<vector<int>> &graph, int idx, vector<int> &arr, vector<bool> &visited) {
+        int length = arr.size();
+        vector<bool> visited(length, false); 
+
         queue<int> q;
-        q.push(idx);
-        visited[idx] = true; 
-
-        while (!q.empty()) {
+        q.push(start);
+        visited[start] = true;
+        
+        while(!q.empty()){
             int currIdx = q.front();
             q.pop();
 
-            if (arr[currIdx] == 0) {
-                return true; // Reachable index with value 0
+            int forward = currIdx + arr[currIdx];
+            int backward = currIdx - arr[currIdx];
+
+            if(isValid(length, forward) && !visited[forward]){
+                if(arr[forward] == 0) return true;
+                visited[forward] = true;
+                q.push(forward);
             }
 
-            for(int neighbor : graph[currIdx]){
-                if(!visited[neighbor]){
-                    q.push(neighbor);
-                    visited[currIdx] = true;
-                }
-            }
-        }
-
-        return false; // No reachable index with value 0
-    }
-
-public:
-    bool canReach(vector<int>& arr, int start) {
-        int length = arr.size();
-        vector<vector<int>> graph(length); 
-        vector<bool> visited(length, false); 
-
-        
-        for (int i = 0; i < length; i++) {
-            int from = i;
-
-            if (isValid(length, from + arr[i])) {
-                directed_edge(graph, from, from + arr[i]);
-            }
-
-            if (isValid(length, from - arr[i])) {
-                directed_edge(graph, from, from - arr[i]);
+            if(isValid(length, backward) && !visited[backward]){
+                if(arr[backward] == 0) return true;
+                visited[backward] = true;
+                q.push(backward);
             }
         }
 
-        return bfs(graph, start, arr, visited); 
+        return false; 
     }
 };
 
