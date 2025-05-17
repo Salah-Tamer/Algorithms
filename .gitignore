@@ -1,0 +1,16 @@
+.vs/
+.vscode/
+*.vcxproj.user
+*.suo
+*.user
+*.ncb
+*.opendb
+*.VC.db
+
+*.exe
+*.obj
+*.dll
+*.pdb
+
+.DS_Store
+Thumbs.db

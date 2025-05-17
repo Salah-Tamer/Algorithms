@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "xstring": "cpp",
-        "vector": "cpp",
-        "unordered_map": "cpp",
-        "iostream": "cpp",
-        "queue": "cpp"
-    }
-}
